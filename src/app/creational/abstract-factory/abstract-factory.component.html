@@ -1,0 +1,7 @@
+Select the transport for your trip: 
+<select [(ngModel)]="selectedFactoryMapId">
+    <option *ngFor="let factoryMap of factoriesMap" [ngValue]="factoryMap.id">{{factoryMap.name}}</option>
+</select>
+<button [disabled]="!selectedFactoryMapId" (click)="applySelection()">Apply</button>
+<ng-container *ngIf="planeForYourTrip">Your will fly on: {{planeForYourTrip}}.</ng-container>
+<ng-container *ngIf="busForYourTrip">You will take {{busForYourTrip}}.</ng-container>
